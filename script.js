@@ -29,7 +29,7 @@ toDoForm.addEventListener("submit", (event) => {
     const completedListItem = document.createElement("li");
     completeButton.addEventListener("click", () => {
         // Change colour to grey
-
+            
         // Move item to new list
         completedListItem.innerText = event.target["new-todo"].value
         completedList.appendChild(completedListItem);
