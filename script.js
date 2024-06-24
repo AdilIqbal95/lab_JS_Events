@@ -1,7 +1,8 @@
 const toDoForm = document.querySelector("#todo-form");
 const formData = document.querySelector("#new-todo");
 const list = document.querySelector("#list");
-
+const showDate = document.querySelector("#show-date-btn");
+const dateDiv = document.querySelector("#date-div");
 
 // console.log(toDoForm);
 
@@ -15,22 +16,19 @@ toDoForm.addEventListener("submit", (event) => {
     newListItem.innerText = event.target["new-todo"].value;
     list.appendChild(newListItem);
     newListItem.appendChild(newButton);
-    
+    newButton.addEventListener("click", (event) =>{
+        
+    })
 })
 
-// const deleteButton = document.querySelector(".Delete-button");
-// deleteButton.addEventListener("click", () =>{
-//     console.log("button clicked");
-// })
 
-window.addEventListener("DOMContentLoaded", (event) =>{
-    const deleteButton = document.querySelector(".Delete-button");
-    if (deleteButton){
-        deleteButton.addEventListener("click", () =>{
-                console.log("button clicked");
-            })
-    }else {
-        console.log("Not Working.")
-    }
-
+showDate.addEventListener("click", (event) => {
+    const newParagraph = document.createElement("p");
+    const date = new Date();
+    newParagraph.innerText= date;
+    dateDiv.appendChild(newParagraph);
+    console.log(newParagraph);
 })
+
+
+
